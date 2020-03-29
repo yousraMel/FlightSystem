@@ -1,0 +1,368 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', arial, sans-serif;
+}
+
+
+body {
+	overflow-x: hidden;
+	background-color: #fff;
+}
+
+header {
+	text-align: center;
+	background-color: #62849c;
+	padding: 25px 0px;
+}
+
+
+.flight-form {
+	background: rgba(98, 132, 156, 0.1);
+	padding: 40px;
+	border-radius: 6px;
+	margin-top: 60px;
+	
+}
+
+.flight-form .form-group {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.flight-form .form-control {
+	background-color: #fff;
+	height: 50px;
+	color: #191a1e;
+	border: none;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 40px;
+	padding: 0px 25px;
+}
+
+.flight-form .form-control::-webkit-input-placeholder {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.flight-form .form-control:-ms-input-placeholder {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.flight-form .form-control::placeholder {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.flight-form input[type="date"].form-control:invalid {
+	color: rgba(82, 82, 84, 0.4);
+}
+
+.flight-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.flight-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 10px;
+	bottom: 6px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+}
+
+.flight-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.flight-form .form-label {
+	display: block;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	font-weight: 400;
+	text-transform: uppercase;
+	line-height: 24px;
+	height: 24px;
+	font-size: 12px;
+	
+}
+
+.flight-form .form-checkbox input {
+	position: absolute !important;
+	margin-left: -9999px !important;
+	visibility: hidden !important;
+}
+
+.flight-form .form-checkbox label {
+	position: relative;
+	padding-top: 4px;
+	padding-left: 30px;
+	font-weight: 400;
+	
+}
+
+.flight-form .form-checkbox label+label {
+	margin-left: 15px;
+}
+
+.flight-form .form-checkbox input+span {
+	position: absolute;
+	left: 2px;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.flight-form .form-checkbox input+span:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background-color: #f23e3e;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.flight-form .form-checkbox input:not(:checked)+span:after {
+	opacity: 0;
+}
+
+.flight-form .form-checkbox input:checked+span:after {
+	opacity: 1;
+	width: 10px;
+	height: 10px;
+}
+
+.flight-form .form-btn {
+	margin-top: 27px;
+
+}
+
+.flight-form .submit-btn {
+	color: #fff;
+	background-color: #1f3646;
+	font-weight: 400;
+	height: 50px;
+	font-size: 14px;
+	border: none;
+	width: 100%;
+	border-radius: 40px;
+	text-transform: uppercase;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+	
+}
+
+.flight-form .submit-btn:hover,
+.flight-form .submit-btn:focus {
+	opacity: 0.9;
+}
+
+
+.features {
+	text-align: center;
+	background-size: cover;
+	text-align: center;
+	height:650px;
+}
+
+.data-table {
+	text-align: center;
+	color: #FFFF33;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	margin-left: 20px;
+	margin-top: 60px;
+	padding-left: 20px;
+	padding-top: 30px;
+	border-radius: 6px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+
+.feather {
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+}
+
+.sidebar {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	padding: 0;
+	box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+	height: 650px;
+	background-color: rgba(98, 132, 156, 0.5);
+}
+
+.sidebar-sticky {
+	position: relative;
+	top: 0;
+	height: 650px;
+	padding-top: 1rem;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: rgba(98, 132, 156, 0.5);
+
+}
+
+.btn-category{
+    background-color: rgba(98, 132, 156, 0.5);
+    border-radius: 4px;
+    padding: 7px 15px;
+    margin: 35px 0 0 0;
+    border: 1px solid red;
+    color: red;
+    font-size: 12px;
+
+}
+.btn-category:focus {
+  outline: none;
+} 
+
+#dropdown-menu {
+	background-color: rgba(98, 132, 156, 0.5);
+}
+
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+	.sidebar-sticky {
+		position: -webkit-sticky;
+		position: sticky;
+	}
+}
+
+.navbar-brand {
+	display: block;
+	height: 48px;
+	padding: 0.5rem 1rem;
+	margin: 0;
+	background: #343434;
+	color: #fff;
+	text-align: center;
+	transition: background 0.5s;
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 1.8rem;
+	line-height: 2rem;
+}
+
+.navbar-brand:hover {
+	background: #3c3c3c;
+	color: #efefef;
+	transition: background 0.5s;
+}
+
+
+
+.sidebar .nav-link {
+	padding: 1rem;
+	font-weight: 500;
+	color: white;
+	width:100px;
+}
+
+.sidebar .nav-item:hover {
+	background: #EEEEEE;
+}
+
+.sidebar .nav-link:hover {
+	color: #333333;
+}
+
+.sidebar .nav-link .feather {
+	margin-right: 4px;
+	color: #999;
+}
+
+.sidebar .nav-link.active {
+	color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+	color: inherit;
+}
+
+.sidebar .nav-item:hover {
+	padding-left: 16px;
+	transition: padding-left 0.5s;
+}
+
+#dashboard {
+	display: grid;
+	grid-template-columns: repeat(2, 100px);
+	grid-template-rows: repeat(2, 100px);
+}
+
+
+
+footer {
+	text-align: center;
+	background-color: #1f3646;
+	padding: 60px 0px;
+}
+
+footer .primary-button {
+	margin-bottom: 40px;
+}
+
+footer .social-icons {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+footer .social-icons li {
+	display: inline-block;
+	margin: 0px 3px;
+}
+
+footer .social-icons li a {
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	background-color: #364a59;
+	transition: all 0.5s;
+}
+
+footer .social-icons li a:hover {
+	background-color: #ffe165;
+	color: #1f3646;
+}
+
+footer p {
+	color: #fff;
+	font-size: 12px;
+	margin-top: 40px; 	
+}
+
+footer p em {
+	font-style: normal;
+	font-weight: 700;
+	color: #ffe165;
+}

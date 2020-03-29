@@ -1,0 +1,219 @@
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" lang="en">
+
+<head>
+<title>Safari</title>
+
+<!-- BOOTSTRAP -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!--  STYLE CSS -->
+<link type="text/css" rel="stylesheet" href="style/style_admin.css" />
+<link type="text/css" rel="stylesheet" href="style/style.js" />
+<link rel="stylesheet" href="style/fontAwesome.css" />
+
+
+</head>
+
+<h:body>
+	<header class="header">
+		<!--Navbar -->
+		<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+			<h4 style="color: #FFFF33; font-family:cursive; ">Safari</h4>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent-333"
+				aria-controls="navbarSupportedContent-333" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent-333"
+				style="margin-left: 100px;">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="home.xhtml">Home <span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Flights</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Pricing</a>
+					</li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+					</a>
+						<div class="dropdown-menu dropdown-default"
+							aria-labelledby="navbarDropdownMenuLink-333">
+							<a class="dropdown-item" href="#">Action</a> <a
+								class="dropdown-item" href="#">Another action</a> <a
+								class="dropdown-item" href="#">Something else here</a>
+						</div></li>
+				</ul>
+			</div>
+		</nav>
+		<!--/.Navbar -->
+	</header>
+	<section class="admin" style="height: 650px;">
+		<div class="container-fluid">
+			<div class="row">
+					<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+					<div class="sidebar-sticky">
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link active"
+								href="admin_index.xhtml"> <span data-feather="home"></span>
+									Dashboard
+							</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="admin_flights.xhtml"> <span data-feather="file"></span>
+									Flights<span class="sr-only">(current)</span>
+							</a></li>
+							<li class="nav-item"><a class="nav-link" href="admin_company.xhtml"> <span
+									data-feather="users"></span> Companies
+							</a></li>
+							<li class="nav-item"><a class="nav-link" href="#"> <span
+									data-feather="users"></span> Customers
+							</a></li>
+							<li class="nav-item"><a class="nav-link" href="#"> <span
+									data-feather="layers"></span> Integrations
+							</a></li>
+						</ul>
+					</div>
+				</nav>
+
+				<div class="col-md-8 offset-md-1">
+					<h:form>
+						<h:commandLink value="All flights" action="admin_flights.xhtml" type="button"  style="background-color: rgba(98, 132, 156, 0.3); border-radius: 4px; padding: 7px 15px; margin: 35px 0 0 0; border: 1px solid yellow; color: white; font-size: 15px;"></h:commandLink>
+					</h:form>
+						
+					<div class="flight-form">
+						<h:form>
+							<div class="row">
+								<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Code</span>
+									<h:inputText class="form-control" type="text"
+										value="#{flightBean.flight.flightNb}" />
+								</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+								<div class="form-group">
+									<span class="form-label">Company</span>
+									<h:selectOneMenu  class="form-control" value="#{flightBean.flight.company}">
+										<f:selectItems value="#{companyBean.companies}" var="c"
+											itemLabel="#{c.name}" itemValue="#{c}" />
+									</h:selectOneMenu>
+								</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Plane</span>
+										<h:selectOneMenu class="form-control" value="#{flightBean.flight.plane}">
+										<f:selectItems value="#{planeBean.planes}" var="p"
+											itemLabel="#{p.planeType} #{p.planeModel}" itemValue="#{p}" />
+									</h:selectOneMenu>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+									<span class="form-label">Flying from</span>
+									<h:inputText class="form-control" type="text"
+										value="#{flightBean.flight.departureCity}" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Flying to</span>
+										<h:inputText class="form-control" type="text"
+											value="#{flightBean.flight.arrivalCity}" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Departing</span> <h:inputText
+											class="form-control" type="text"
+											value="#{flightBean.flight.departureDate}" >
+											<f:convertDateTime pattern="d-M-yyyy" /></h:inputText>
+										
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Time</span> <h:inputText
+											class="form-control" type="text"
+											value="#{flightBean.flight.departureTime}" >
+											<f:convertDateTime pattern="HH:mm" /></h:inputText>
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Arriving </span> <h:inputText
+											class="form-control" type="text"
+											value="#{flightBean.flight.arrivalDate}" >
+											<f:convertDateTime pattern="d-M-yyyy" /></h:inputText>
+										
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Time </span> <h:inputText
+											class="form-control" type="text"
+											value="#{flightBean.flight.arrivalTime}" >
+											<f:convertDateTime pattern="HH:mm" /></h:inputText>
+
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+									<h:commandLink action="#{flightBean.create}" type="button" class="submit-btn" value="Add flight" style="text-align:center; border-radius: 4px; border: 1px solid yellow; color: white; font-size: 18px;" />
+							</div>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="primary-button">
+						<a href="#" class="scroll-top">Back To Top</a>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<ul class="social-icons">
+						<li><a href="https://www.facebook.com/tooplate"><i
+								class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-12">
+					<p>
+						Copyright copy; 2018 Flight Tour and Travel Company | Design: <a
+							href="http://www.tooplate.com/view/2093-flight" target="_parent"><em>Flight</em></a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</h:body>
+</h:html>
